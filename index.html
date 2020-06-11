@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="Description" content="Online weather forecast." />
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="/style/style.css" />
+  </head>
+  <body class="body-padding">
+    <div class="website-wrapper hide-class">
+      <div class="text-input">
+        <input type="text" placeholder="Enter the city" class="input-field" />
+        <input type="submit" value="SUBMIT" class="button button-submit" />
+      </div>
+      <div class="present-forecast-container forecast-container container-invisible"></div>
+      <h1 class="container-invisible">Daily weather forecast</h1>
+      <div class="daily-forecast-container forecast-container container-invisible"></div>
+      <h1 class="container-invisible">Hourly weather forecast</h1>
+      <div class="hourly-forecast-container forecast-container container-invisible"></div>
+      <div class="alert-message">
+        WRONG CITY NAME
+        <div class="button button-close">CLOSE</div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" data-auto-replace-svg="nest"></script>
+    <script src="/scripts/script.js"></script>
+  </body>
+</html>

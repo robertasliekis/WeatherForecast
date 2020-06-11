@@ -1,0 +1,554 @@
+//Global values start
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+  font-weight: 200;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.1rem;
+  font-weight: 200;
+}
+
+label,
+input,
+textarea {
+  font-family: "Barlow", Helvetica, Sans-Serif;
+  font-size: 1.1rem;
+}
+
+input {
+  font-weight: 200;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Barlow", Helvetica, Sans-Serif;
+  font-weight: 200;
+  font-size: 1.1rem;
+  height: 100%;
+}
+
+body {
+  background: linear-gradient(to bottom, #606faf 0%, #dda8c4 100%);
+}
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexCenterColumn {
+  @include flexCenter();
+  flex-direction: column;
+}
+
+@mixin flexCenterBetween {
+  @include flexCenter();
+  justify-content: space-between;
+}
+
+.website-wrapper {
+  @include flexCenterColumn();
+  justify-content: flex-start;
+  position: relative;
+  background: linear-gradient(to bottom, #606faf 0%, #dda8c4 100%);
+  color: white;
+  padding: 3rem;
+  overflow: hidden;
+  height: auto;
+}
+
+.text-input {
+  @include flexCenter();
+  margin-bottom: 3rem;
+  height: 4rem;
+  .input-field {
+    height: 100%;
+    width: 20rem;
+    font-size: 2rem;
+    border: none;
+    border-radius: 1rem 0 0 1rem;
+    padding-left: 1rem;
+    outline: none;
+    font-weight: 400;
+  }
+  .button-submit {
+    border-radius: 0 1rem 1rem 0;
+  }
+}
+
+.button {
+  @include flexCenter();
+  height: 100%;
+  width: 10rem;
+  font-size: 2rem;
+  background-color: white;
+  border-radius: 1rem;
+  color: #606faf;
+  border: 3px solid white;
+  margin-left: 0.2rem;
+  transition: 0.3s all ease;
+  cursor: pointer;
+  font-weight: 400;
+  outline: none;
+}
+
+h1 {
+  margin-bottom: 2rem;
+  font-size: 3rem;
+}
+
+.forecast-container {
+  font-weight: 400;
+  @include flexCenterColumn();
+  margin-bottom: 2rem;
+  color: white;
+  width: auto;
+  .weekday {
+    @include flexCenterColumn();
+    padding: 1rem;
+    border: 3px solid white;
+    border-right: none;
+    div {
+      font-weight: 400;
+      @include flexCenter();
+      margin-bottom: 0.5rem;
+    }
+    .icon {
+      @include flexCenter();
+      height: 5rem;
+      img {
+        width: 8rem;
+        height: 8rem;
+      }
+    }
+    .weekday-name,
+    .date,
+    .temperature,
+    .time {
+      font-size: 1.5rem;
+    }
+    .wind-direction {
+      @include flexCenter();
+      color: white;
+      font-size: 1.5rem;
+      height: 2rem;
+      width: 2rem;
+      margin-bottom: 0rem;
+    }
+    .description {
+      height: 2.5rem;
+    }
+    .description,
+    .wind-speed {
+      margin-bottom: 0.5rem;
+      font-weight: 400;
+      text-align: center;
+    }
+  }
+}
+
+.present-forecast-container {
+  padding: 2rem 4rem;
+  border: 3px solid white;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  .weekday {
+    padding: 0;
+    border: none;
+    .city {
+      font-size: 4rem;
+    }
+    .wind-speed {
+      margin-bottom: 1.5rem;
+    }
+    .temperature {
+      font-size: 4rem;
+    }
+    .icon {
+      @include flexCenter();
+    }
+    .description {
+      margin-bottom: 1rem;
+    }
+    .wind-direction {
+      @include flexCenter();
+      font-size: 2.5rem;
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+}
+
+.daily-forecast-container {
+  @include flexCenter();
+  align-items: flex-start;
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 2rem;
+  .weekday {
+    width: 10rem;
+
+    div {
+      width: 100%;
+    }
+
+    div:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+  .weekday:first-of-type {
+    border-radius: 1rem 0 0 1rem;
+  }
+  .weekday:last-of-type {
+    border-right: 3px solid white;
+    border-radius: 0 1rem 1rem 0;
+  }
+}
+
+.hourly-forecast-container {
+  justify-content: flex-start;
+  flex-direction: row;
+  overflow-x: scroll;
+  border: 3px solid white;
+  border-radius: 1rem;
+  width: 100%;
+  height: auto;
+  margin-bottom: 0;
+  .weekday {
+    height: 100%;
+    border: none;
+    border-right: 3px solid white;
+    .weekday-name {
+      width: 9rem;
+      margin-bottom: 1rem;
+    }
+    .time {
+      margin-bottom: 1rem;
+    }
+  }
+  .weekday:last-of-type {
+    border-right: none;
+  }
+}
+
+.hide-class {
+  height: 100%;
+  .container-invisible {
+    display: none;
+  }
+}
+
+.alert-message {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50vh;
+  white-space: nowrap;
+  @include flexCenterColumn();
+  border: 3px solid white;
+  border-radius: 1rem;
+  font-size: 3rem;
+  font-weight: 300;
+  padding: 3rem 4rem;
+  background-color: white;
+  color: #606faf;
+  z-index: -1;
+  .button {
+    background-color: white;
+    color: #606faf;
+    margin-top: 3rem;
+    height: 4rem;
+    border: 3px solid #606faf;
+  }
+}
+
+.alert-message-visible {
+  z-index: 1;
+}
+
+.body-padding {
+  padding-right: 17px;
+}
+
+@media only screen and (min-width: 1025px) {
+  .button:hover {
+    background-color: transparent;
+    color: white;
+  }
+
+  .alert-message {
+    .button:hover {
+      color: white;
+      background-color: #606faf;
+    }
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .body-padding {
+    padding-right: 0px;
+  }
+
+  .website-wrapper {
+    padding: 2rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .text-input {
+    margin-bottom: 2rem;
+    height: 3rem;
+    .input-field {
+      height: 100%;
+      width: 15rem;
+      font-size: 1.5rem;
+      border: none;
+      border-radius: 1rem 0 0 1rem;
+      padding-left: 1rem;
+      outline: none;
+      font-weight: 400;
+    }
+    .button-submit {
+      border-radius: 0 1rem 1rem 0;
+    }
+  }
+
+  .button {
+    font-size: 1.5rem;
+  }
+
+  .forecast-container {
+    margin-bottom: 1rem;
+    .weekday {
+      padding: 0.5rem;
+      div {
+        margin-bottom: 0.25rem;
+      }
+      .icon {
+        height: 3rem;
+        img {
+          width: 6rem;
+          height: 6rem;
+        }
+      }
+      .weekday-name,
+      .date,
+      .temperature,
+      .time {
+        font-size: 1.2rem;
+      }
+      .description {
+        height: 2.5rem;
+      }
+      .description,
+      .wind-speed {
+        margin-bottom: 0.5rem;
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .present-forecast-container {
+    padding: 1rem 2rem;
+    .weekday {
+      .city,
+      .temperature {
+        font-size: 3rem;
+      }
+      .icon {
+        width: 3rem;
+        height: 3rem;
+      }
+      .description,
+      .wind-speed {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+
+  .hourly-forecast-container {
+    margin-bottom: 0;
+    .weekday {
+      .weekday-name {
+        margin-bottom: 0.25rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .forecast-container {
+    .weekday {
+      .weekday-name,
+      .date,
+      .temperature,
+      .time {
+        font-size: 0.9rem;
+      }
+      .description,
+      .wind-speed {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .daily-forecast-container {
+    .weekday {
+      padding: 0.5rem 0;
+      width: 8rem;
+    }
+  }
+
+  .present-forecast-container {
+    .weekday {
+      .city,
+      .temperature {
+        font-size: 2.5rem;
+      }
+      .icon {
+        width: 3rem;
+        height: 3rem;
+      }
+      .description,
+      .wind-speed {
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+      }
+      .wind-direction {
+        @include flexCenter();
+        font-size: 2rem;
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+  }
+
+  .hourly-forecast-container {
+    .weekday {
+      .weekday-name {
+        width: 6rem;
+      }
+    }
+  }
+
+  .alert-message {
+    font-size: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .website-wrapper {
+    padding: 1rem;
+  }
+
+  .text-input {
+    margin-bottom: 1rem;
+    .input-field {
+      width: 10rem;
+      font-size: 1.3rem;
+    }
+    .button {
+      width: 7rem;
+      font-size: 1.3rem;
+    }
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .present-forecast-container {
+    .weekday {
+      .city,
+      .temperature {
+        font-size: 2rem;
+      }
+      .description {
+        margin-bottom: 0.25rem;
+      }
+    }
+  }
+
+  .daily-forecast-container {
+    justify-content: flex-start;
+    overflow-x: scroll;
+    border-radius: 1rem;
+    border: 3px solid white;
+    .weekday {
+      border: none;
+      border-right: 3px solid white;
+    }
+    .weekday:first-of-type {
+      border-radius: 0rem;
+    }
+    .weekday:last-of-type {
+      border-radius: 0rem;
+      border-right: none;
+    }
+  }
+
+  .hourly-forecast-container {
+    .weekday {
+      padding: 0.5rem 0;
+      .weekday-name {
+        width: 5rem;
+      }
+    }
+  }
+
+  .alert-message {
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    .button {
+      margin-top: 1rem;
+      height: 3rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .website-wrapper {
+    padding: 1rem 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+}
