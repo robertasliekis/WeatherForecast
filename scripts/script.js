@@ -1,6 +1,6 @@
 var input = document.querySelector(".input-field");
 var buttonSubmit = document.querySelector(".button-submit");
-//var city = "vilnius";
+var city = "vilnius";
 var units = "metric";
 var dataQuantity = 40;
 var dayTime = 12;
@@ -89,7 +89,7 @@ buttonSubmit.addEventListener("click", function (name) {
           weatherIconDisplay("weekday-" + weekdayType + classIndex, "icon" + classIndex, classIndex, arrayIndex);
 
           $(".weekday-" + weekdayType + classIndex).append('<div class="description description' + classIndex + '">' + data.list[arrayIndex].weather[0].description.toUpperCase() + "</div>");
-          $(".weekday-" + weekdayType + classIndex).append('<div class="wind-speed wind-speed' + classIndex + '">' + "WIND SPEED: " + data.list[arrayIndex].wind.speed + " m/s" + "</div>");
+          $(".weekday-" + weekdayType + classIndex).append('<div class="wind-speed wind-speed' + classIndex + '">' + "WIND SPEED: <br>" + data.list[arrayIndex].wind.speed + " m/s" + "</div>");
 
           $(".weekday-" + weekdayType + classIndex).append('<div class="wind-direction wind-direction-' + weekdayType + classIndex + '"><i class="fas fa-location-arrow"></i></div>');
           windAngle = data.list[arrayIndex].wind.deg - 45;
