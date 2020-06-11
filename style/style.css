@@ -117,6 +117,7 @@ body {
 
 .text-input .button-submit {
   border-radius: 0 1rem 1rem 0;
+  height: 100%;
 }
 
 .button {
@@ -256,10 +257,11 @@ h1 {
 }
 
 .present-forecast-container {
-  padding: 2rem 4rem;
+  padding: 2rem 0;
   border: 3px solid white;
   border-radius: 1rem;
   font-size: 1.5rem;
+  width: 28rem;
 }
 
 .present-forecast-container .weekday {
@@ -514,7 +516,8 @@ h1 {
     font-size: 1.2rem;
   }
   .present-forecast-container {
-    padding: 1rem 2rem;
+    padding: 1rem 0;
+    width: 24rem;
   }
   .present-forecast-container .weekday .city,
   .present-forecast-container .weekday .temperature {
@@ -603,6 +606,9 @@ h1 {
   }
   h1 {
     font-size: 1.8rem;
+  }
+  .present-forecast-container {
+    width: 100%;
   }
   .present-forecast-container .weekday .city,
   .present-forecast-container .weekday .temperature {
