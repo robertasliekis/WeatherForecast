@@ -1,6 +1,6 @@
 var input = document.querySelector(".input-field");
 var buttonSubmit = document.querySelector(".button-submit");
-var city = "vilnius";
+//var city = "vilnius";
 var units = "metric";
 var dataQuantity = 40;
 var dayTime = 12;
