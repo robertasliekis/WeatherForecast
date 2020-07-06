@@ -105,7 +105,7 @@ buttonSubmit.addEventListener("click", function (name) {
           let icon = data.list[arrayIndex].weather[0].icon;
           let iconImage = new Image();
           iconImage.src = `http://openweathermap.org/img/wn/${icon}@2x.png`;
-          $("." + className + classIndex + classLocation).append(iconImage);
+          $(`.${className}${classIndex}${classLocation}`).append(iconImage);
         }
       }
     });
