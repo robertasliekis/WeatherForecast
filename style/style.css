@@ -194,7 +194,11 @@ h1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 0.1rem;
+  margin-bottom: 0.2rem;
+}
+
+.forecast-container .weekday .temperature {
+  font-size: 1.3rem;
 }
 
 .forecast-container .weekday .icon {
@@ -362,10 +366,6 @@ h1 {
 .hourly-forecast-container .weekday .weekday-name {
   width: 9rem;
   margin-bottom: 0.5rem;
-}
-
-.hourly-forecast-container .weekday .time {
-  margin-bottom: 1rem;
 }
 
 .hourly-forecast-container .weekday:last-of-type {

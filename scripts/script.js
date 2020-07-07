@@ -81,7 +81,7 @@ buttonSubmit.addEventListener("click", function (name) {
               break;
             case "hourly":
               $(weekDayTypeIndex).append(`<div class="weekday-name">${weekDays[weekDayIndex].toUpperCase()}
-            </div><div class="date">${data.list[arrayIndex].dt_txt.substr(5, 5)}</div>`);
+            </div><div class="date">${data.list[arrayIndex].dt_txt.substr(5, 5)}</div><div class="time">${data.list[arrayIndex].dt_txt.substr(11, 5)}</div>`);
               break;
           }
 

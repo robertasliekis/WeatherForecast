@@ -139,7 +139,10 @@ h1 {
     div {
       font-weight: 400;
       @include flexCenter();
-      margin-bottom: 0.1rem;
+      margin-bottom: 0.2rem;
+    }
+    .temperature {
+      font-size: 1.3rem;
     }
     .icon {
       @include flexCenter();
@@ -240,9 +243,6 @@ h1 {
     .weekday-name {
       width: 9rem;
       margin-bottom: 0.5rem;
-    }
-    .time {
-      margin-bottom: 1rem;
     }
   }
   .weekday:last-of-type {
